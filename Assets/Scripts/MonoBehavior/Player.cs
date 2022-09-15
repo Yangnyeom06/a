@@ -3,28 +3,23 @@ using System.Collections.Generic;
 using UnityEngine;
 public class Player : Character
 {
-    //수정한 부분 <------
     public HitPoints HP;
-    // ------>
-    //public Inventory inventoryPrefab;
-    //Inventory inventory;
-
+    public HitPoints Exp;
+    public Inventory inventoryPrefab;
+    Inventory inventory;
 
     public HealthBar healthBarPrefab;
     HealthBar healthBar;
+    public ExpBar expBarPrefab;
+    ExpBar expBar;
+    RPGGameManager rpgGameManager;
+    public int playerLevel = 1;
 
-    float speed = 10;
-
-/* 삭제할 것입니다.
     public void Start()
     {
-
         inventory = Instantiate(inventoryPrefab);
-        healthBar = Instantiate(healthBarPrefab);
-        HP.value = StartingHP;
-        healthBar.Character = this;
     }
-    */
+    
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("CanBePickedUp"))
@@ -41,11 +36,7 @@ public class Player : Character
                 switch (hitObject.itemType)
                 {
                     case Item.ItemType.COIN:
-
-
-                        //shouldDisappear = inventory.AddItem(hitObject);
-                       
-
+                        shouldDisappear = AdjustExp(hitObject.quantity);
                         break;
                     case Item.ItemType.HEALTH:
                         shouldDisappear = AdjustHP(hitObject.quantity);
@@ -64,15 +55,38 @@ public class Player : Character
     }
     public bool AdjustHP(int amount)
     {
-        if (HP.value < maxHP)
+        if (HP.hpValue < maxHP)
         {
-            HP.value += amount;
-            print("Adjusted HP by: " + amount + ". New Value: " + HP.value);
+            HP.hpValue += amount;
+            //print("Adjusted HP by: " + amount + ". New hpValue: " + HP.hpValue);
 
             return true;
         }
         return false;
     }
+
+    public bool AdjustExp(int amount)
+    {
+        if (Exp.expValue < maxExp)
+        {
+            Exp.expValue += amount;
+            print("Adjusted Exp by: " + amount + ". New expValue: " + Exp.expValue);
+            if (Exp.expValue >= maxExp)
+                    {
+                        Exp.expValue = 0;
+                        expBar.maxExp += 50;
+                        maxExp += 50;
+                        playerLevel += 1;
+                        //rpgGameManager.LevelUp();
+                        //expBar.Update();
+                        print("player Level: " + playerLevel);
+                        return true;
+                    }
+            return true;
+        }
+        return false;
+    }
+
 
     // 수정한 부분 <-------
     private void OnEnable()
@@ -82,19 +96,22 @@ public class Player : Character
 
     public override void ResetCharacter()
     {
-        //inventory = Instantiate(inventoryPrefab);
         healthBar = Instantiate(healthBarPrefab);
-        HP.value = StartingHP;
+        HP.hpValue = StartingHP;
         healthBar.Character = this;
+        expBar = Instantiate(expBarPrefab);
+        Exp.expValue = minExp;
+        expBar.Character = this;
     }
 
     public override IEnumerator DamageCharacter(int damage, float interval)
     {
         while (true)
         {
-            HP.value = HP.value - damage;
+            StartCoroutine(FlickerCharacter());
+            HP.hpValue = HP.hpValue - damage;
 
-            if(HP.value <= float.Epsilon)
+            if(HP.hpValue <= float.Epsilon)
             {
                 KillCharacter();
                 break;
@@ -115,7 +132,7 @@ public class Player : Character
         base.KillCharacter();
 
         Destroy(healthBar.gameObject);
-        //Destroy(inventory.gameObject);
+        Destroy(expBar.gameObject);
     }
 
     // -------->

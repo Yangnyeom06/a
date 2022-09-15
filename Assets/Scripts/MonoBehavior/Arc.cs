@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Arc : MonoBehaviour
 {
-public IEnumerator TravelArc(Vector2 destination, float duration)
+public IEnumerator TravelArc(Vector3 destination, float duration)
     {
         var startPosition = transform.position;
         var percentComplete = 0.0f;
@@ -12,7 +12,7 @@ public IEnumerator TravelArc(Vector2 destination, float duration)
         {
             percentComplete += Time.deltaTime / duration;
 
-            transform.position = Vector2.Lerp(startPosition, destination, percentComplete);
+            transform.position = Vector3.Lerp(startPosition, destination, percentComplete);
 
             yield return null;
         }

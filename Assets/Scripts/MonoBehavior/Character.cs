@@ -5,11 +5,12 @@ using UnityEngine;
 public abstract class Character : MonoBehaviour
 {
 
-    //public HitPoints HP; 삭제할 예정입니다.
     
     public float maxHP;
     public float StartingHP;
-		//수정한 부분 <------
+    public float maxExp;
+    public float minExp;
+    
     public virtual void KillCharacter()
     {
         Destroy(gameObject);
@@ -18,5 +19,10 @@ public abstract class Character : MonoBehaviour
     public abstract void ResetCharacter();
     public abstract IEnumerator DamageCharacter(int damage, float interval);
     
-       	// ----->
+    public virtual IEnumerator FlickerCharacter()
+    {
+        GetComponent<SpriteRenderer>().color = Color.blue;
+        yield return new WaitForSeconds(0.1f);
+        GetComponent<SpriteRenderer>().color = Color.white;
+    }
 }

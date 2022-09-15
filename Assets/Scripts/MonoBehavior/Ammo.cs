@@ -13,7 +13,7 @@ public class Ammo : MonoBehaviour
             Enemy enemy = collision.gameObject.GetComponent<Enemy>();
             StartCoroutine(enemy.DamageCharacter(damageInflicted, 0.0f));
 
-            gameObject.SetActive(false);
+            //gameObject.SetActive(false);
 
         }
     }

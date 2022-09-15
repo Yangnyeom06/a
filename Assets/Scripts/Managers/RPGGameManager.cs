@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class RPGGameManager : MonoBehaviour
 {
-    //수정한 부분 <-----
     public RPGCameraManager cameraManager;
-    //------>
     public static RPGGameManager sharedInstance = null;
     public SpawnPoint playerSpawnPoint;
+    public GameObject SkillChoiceSet;
+    Player player1;
     void Awake()
     {
         if (sharedInstance != null && sharedInstance != this)
@@ -26,6 +26,24 @@ public class RPGGameManager : MonoBehaviour
         SetupScene();
     }
 
+    void Update()
+    {
+        if (Input.GetButtonDown("Cancel"))
+        {
+            if (SkillChoiceSet.activeSelf)
+                SkillChoiceSet.SetActive(false);
+            else SkillChoiceSet.SetActive(true);
+            {
+                Time.timeScale = 0;
+            }
+        }
+    }
+
+    public void LevelUp()
+    {
+        Time.timeScale = 0;
+        SkillChoiceSet.SetActive(true);
+    }
 
     public void SetupScene()
     {

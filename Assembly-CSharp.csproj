@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{d4f4dc15-2dc9-d8d7-1ede-9b62906d5b60}</ProjectGuid>
+    <ProjectGuid>{e6bdc332-25e1-2831-82c1-25d0441455a3}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -37,25 +37,28 @@
   </PropertyGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\Managers\RPGGameManager.cs" />
-     <Compile Include="Assets\Scripts\MonoBehavior\MoveController.cs" />
+     <Compile Include="Assets\Scripts\MonoBehavior\Controller\MoveController.cs" />
      <Compile Include="Assets\Scripts\Scriptable Objects\Item.cs" />
-     <Compile Include="Assets\Scripts\MonoBehavior\MoveDirController.cs" />
+     <Compile Include="Assets\Scripts\MonoBehavior\Controller\MoveDirController.cs" />
+     <Compile Include="Assets\Scripts\MonoBehavior\PlayerData.cs" />
      <Compile Include="Assets\Scripts\MonoBehavior\Inventroy\Slot.cs" />
      <Compile Include="Assets\Scripts\MonoBehavior\SpawnPoint.cs" />
      <Compile Include="Assets\Scripts\MonoBehavior\Ammo.cs" />
+     <Compile Include="Assets\Scripts\MonoBehavior\Status.cs" />
      <Compile Include="Assets\Scripts\MonoBehavior\Enemy.cs" />
      <Compile Include="Assets\Scripts\Scriptable Objects\HitPoints.cs" />
      <Compile Include="Assets\Scripts\MonoBehavior\Inventroy\Inventory.cs" />
      <Compile Include="Assets\Scripts\MonoBehavior\Consumable.cs" />
      <Compile Include="Assets\Scripts\MonoBehavior\Player.cs" />
      <Compile Include="Assets\Scripts\MonoBehavior\Wander.cs" />
+     <Compile Include="Assets\Scripts\MonoBehavior\Bar\ExpBar.cs" />
      <Compile Include="Assets\Scripts\MonoBehavior\Arc.cs" />
      <Compile Include="Assets\Scripts\MonoBehavior\Character.cs" />
      <Compile Include="Assets\Scripts\RoundCameraPos.cs" />
      <Compile Include="Assets\Scripts\MonoBehavior\Weapon.cs" />
      <Compile Include="Assets\Scripts\Managers\RPGCameraManager.cs" />
-     <Compile Include="Assets\Scripts\MonoBehavior\HealthBar.cs" />
-     <Compile Include="Assets\Scripts\MonoBehavior\Status.cs" />
+     <Compile Include="Assets\Scripts\MonoBehavior\Bar\HealthBar.cs" />
+     <None Include="Assets\Fonts\silkscreen\readme.txt" />
     <Reference Include="UnityEngine">
         <HintPath>G:\유니티\Unity 2020.3.37f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
     </Reference>
@@ -624,100 +627,100 @@
         <HintPath>G:\유니티\Unity 2020.3.37f1\Editor\Data\NetStandard\compat\2.0.0\shims\netfx\System.Xml.Serialization.dll</HintPath>
     </Reference>
     <Reference Include="Unity.2D.Animation.Editor">
-        <HintPath>G:\유니티\project\My project (4)\Library\ScriptAssemblies\Unity.2D.Animation.Editor.dll</HintPath>
+        <HintPath>G:\유니티\project\My project\Library\ScriptAssemblies\Unity.2D.Animation.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.InternalAPIEngineBridge.001">
-        <HintPath>G:\유니티\project\My project (4)\Library\ScriptAssemblies\Unity.InternalAPIEngineBridge.001.dll</HintPath>
+        <HintPath>G:\유니티\project\My project\Library\ScriptAssemblies\Unity.InternalAPIEngineBridge.001.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VSCode.Editor">
-        <HintPath>G:\유니티\project\My project (4)\Library\ScriptAssemblies\Unity.VSCode.Editor.dll</HintPath>
+        <HintPath>G:\유니티\project\My project\Library\ScriptAssemblies\Unity.VSCode.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.2D.PixelPerfect">
-        <HintPath>G:\유니티\project\My project (4)\Library\ScriptAssemblies\Unity.2D.PixelPerfect.dll</HintPath>
+        <HintPath>G:\유니티\project\My project\Library\ScriptAssemblies\Unity.2D.PixelPerfect.dll</HintPath>
     </Reference>
     <Reference Include="Unity.2D.Tilemap.Editor">
-        <HintPath>G:\유니티\project\My project (4)\Library\ScriptAssemblies\Unity.2D.Tilemap.Editor.dll</HintPath>
+        <HintPath>G:\유니티\project\My project\Library\ScriptAssemblies\Unity.2D.Tilemap.Editor.dll</HintPath>
     </Reference>
     <Reference Include="PsdPlugin">
-        <HintPath>G:\유니티\project\My project (4)\Library\ScriptAssemblies\PsdPlugin.dll</HintPath>
+        <HintPath>G:\유니티\project\My project\Library\ScriptAssemblies\PsdPlugin.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
-        <HintPath>G:\유니티\project\My project (4)\Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll</HintPath>
+        <HintPath>G:\유니티\project\My project\Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualStudio.Editor">
-        <HintPath>G:\유니티\project\My project (4)\Library\ScriptAssemblies\Unity.VisualStudio.Editor.dll</HintPath>
+        <HintPath>G:\유니티\project\My project\Library\ScriptAssemblies\Unity.VisualStudio.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline">
-        <HintPath>G:\유니티\project\My project (4)\Library\ScriptAssemblies\Unity.Timeline.dll</HintPath>
+        <HintPath>G:\유니티\project\My project\Library\ScriptAssemblies\Unity.Timeline.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-        <HintPath>G:\유니티\project\My project (4)\Library\ScriptAssemblies\Unity.TextMeshPro.dll</HintPath>
+        <HintPath>G:\유니티\project\My project\Library\ScriptAssemblies\Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="Unity.2D.IK.Editor">
-        <HintPath>G:\유니티\project\My project (4)\Library\ScriptAssemblies\Unity.2D.IK.Editor.dll</HintPath>
+        <HintPath>G:\유니티\project\My project\Library\ScriptAssemblies\Unity.2D.IK.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.2D.Sprite.Editor">
-        <HintPath>G:\유니티\project\My project (4)\Library\ScriptAssemblies\Unity.2D.Sprite.Editor.dll</HintPath>
+        <HintPath>G:\유니티\project\My project\Library\ScriptAssemblies\Unity.2D.Sprite.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.2D.Psdimporter.Editor">
-        <HintPath>G:\유니티\project\My project (4)\Library\ScriptAssemblies\Unity.2D.Psdimporter.Editor.dll</HintPath>
+        <HintPath>G:\유니티\project\My project\Library\ScriptAssemblies\Unity.2D.Psdimporter.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.2D.Path.Editor">
-        <HintPath>G:\유니티\project\My project (4)\Library\ScriptAssemblies\Unity.2D.Path.Editor.dll</HintPath>
+        <HintPath>G:\유니티\project\My project\Library\ScriptAssemblies\Unity.2D.Path.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.InternalAPIEditorBridge.001">
-        <HintPath>G:\유니티\project\My project (4)\Library\ScriptAssemblies\Unity.InternalAPIEditorBridge.001.dll</HintPath>
+        <HintPath>G:\유니티\project\My project\Library\ScriptAssemblies\Unity.InternalAPIEditorBridge.001.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.UI">
-        <HintPath>G:\유니티\project\My project (4)\Library\ScriptAssemblies\UnityEditor.UI.dll</HintPath>
+        <HintPath>G:\유니티\project\My project\Library\ScriptAssemblies\UnityEditor.UI.dll</HintPath>
     </Reference>
     <Reference Include="Unity.PlasticSCM.Editor">
-        <HintPath>G:\유니티\project\My project (4)\Library\ScriptAssemblies\Unity.PlasticSCM.Editor.dll</HintPath>
+        <HintPath>G:\유니티\project\My project\Library\ScriptAssemblies\Unity.PlasticSCM.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Rider.Editor">
-        <HintPath>G:\유니티\project\My project (4)\Library\ScriptAssemblies\Unity.Rider.Editor.dll</HintPath>
+        <HintPath>G:\유니티\project\My project\Library\ScriptAssemblies\Unity.Rider.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI">
-        <HintPath>G:\유니티\project\My project (4)\Library\ScriptAssemblies\UnityEngine.UI.dll</HintPath>
+        <HintPath>G:\유니티\project\My project\Library\ScriptAssemblies\UnityEngine.UI.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Mathematics">
-        <HintPath>G:\유니티\project\My project (4)\Library\ScriptAssemblies\Unity.Mathematics.dll</HintPath>
+        <HintPath>G:\유니티\project\My project\Library\ScriptAssemblies\Unity.Mathematics.dll</HintPath>
     </Reference>
     <Reference Include="Unity.2D.IK.Runtime">
-        <HintPath>G:\유니티\project\My project (4)\Library\ScriptAssemblies\Unity.2D.IK.Runtime.dll</HintPath>
+        <HintPath>G:\유니티\project\My project\Library\ScriptAssemblies\Unity.2D.IK.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="Cinemachine">
-        <HintPath>G:\유니티\project\My project (4)\Library\ScriptAssemblies\Cinemachine.dll</HintPath>
+        <HintPath>G:\유니티\project\My project\Library\ScriptAssemblies\Cinemachine.dll</HintPath>
     </Reference>
     <Reference Include="com.unity.cinemachine.editor">
-        <HintPath>G:\유니티\project\My project (4)\Library\ScriptAssemblies\com.unity.cinemachine.editor.dll</HintPath>
+        <HintPath>G:\유니티\project\My project\Library\ScriptAssemblies\com.unity.cinemachine.editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.2D.Animation.Triangle.Editor">
-        <HintPath>G:\유니티\project\My project (4)\Library\ScriptAssemblies\Unity.2D.Animation.Triangle.Editor.dll</HintPath>
+        <HintPath>G:\유니티\project\My project\Library\ScriptAssemblies\Unity.2D.Animation.Triangle.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.2D.Animation.Runtime">
-        <HintPath>G:\유니티\project\My project (4)\Library\ScriptAssemblies\Unity.2D.Animation.Runtime.dll</HintPath>
+        <HintPath>G:\유니티\project\My project\Library\ScriptAssemblies\Unity.2D.Animation.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="Unity.2D.PixelPerfect.Editor">
-        <HintPath>G:\유니티\project\My project (4)\Library\ScriptAssemblies\Unity.2D.PixelPerfect.Editor.dll</HintPath>
+        <HintPath>G:\유니티\project\My project\Library\ScriptAssemblies\Unity.2D.PixelPerfect.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline.Editor">
-        <HintPath>G:\유니티\project\My project (4)\Library\ScriptAssemblies\Unity.Timeline.Editor.dll</HintPath>
+        <HintPath>G:\유니티\project\My project\Library\ScriptAssemblies\Unity.Timeline.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Mathematics.Editor">
-        <HintPath>G:\유니티\project\My project (4)\Library\ScriptAssemblies\Unity.Mathematics.Editor.dll</HintPath>
+        <HintPath>G:\유니티\project\My project\Library\ScriptAssemblies\Unity.Mathematics.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.2D.Common.Runtime">
-        <HintPath>G:\유니티\project\My project (4)\Library\ScriptAssemblies\Unity.2D.Common.Runtime.dll</HintPath>
+        <HintPath>G:\유니티\project\My project\Library\ScriptAssemblies\Unity.2D.Common.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="Unity.2D.SpriteShape.Editor">
-        <HintPath>G:\유니티\project\My project (4)\Library\ScriptAssemblies\Unity.2D.SpriteShape.Editor.dll</HintPath>
+        <HintPath>G:\유니티\project\My project\Library\ScriptAssemblies\Unity.2D.SpriteShape.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.2D.Common.Editor">
-        <HintPath>G:\유니티\project\My project (4)\Library\ScriptAssemblies\Unity.2D.Common.Editor.dll</HintPath>
+        <HintPath>G:\유니티\project\My project\Library\ScriptAssemblies\Unity.2D.Common.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.2D.SpriteShape.Runtime">
-        <HintPath>G:\유니티\project\My project (4)\Library\ScriptAssemblies\Unity.2D.SpriteShape.Runtime.dll</HintPath>
+        <HintPath>G:\유니티\project\My project\Library\ScriptAssemblies\Unity.2D.SpriteShape.Runtime.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

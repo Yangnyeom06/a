@@ -166,10 +166,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 402d15407efe7f940a111e9ec3396d53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHP: 2
-  StartingHP: 2
+  maxHP: 1
+  StartingHP: 1
+  maxExp: 0
+  minExp: 0
   damageStrength: 1
-  prefabToSpawn: {fileID: 4443353359000742721, guid: 2050e95f0b994994d824c2a36ccd501a, type: 3}
+  prefabToSpawn1: {fileID: 6959787854110540120, guid: 1f887eb85319d1a4a849b825227585e0, type: 3}
+  prefabToSpawn2: {fileID: 4443353359000742721, guid: 2050e95f0b994994d824c2a36ccd501a, type: 3}
 --- !u!58 &456041134629879336
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -198,7 +201,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 401fb0d5dcf0c824686b5c4cb04fdce6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pursuitSpeed: 1.4
+  pursuitSpeed: 0
   wanderSpeed: 0.8
   currentSpeed: 0
   directionChangeInterval: 3

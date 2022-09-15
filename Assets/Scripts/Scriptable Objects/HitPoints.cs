@@ -5,5 +5,6 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "HitPoints")]
 public class HitPoints : ScriptableObject
 {
-    public float value;
+    public float hpValue;
+    public float expValue;
 }

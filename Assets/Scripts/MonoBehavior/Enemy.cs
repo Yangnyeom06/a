@@ -10,7 +10,8 @@ public class Enemy : Character
     Coroutine damageCoroutine;
     // ------>
     float HP;
-    public GameObject prefabToSpawn;
+    public GameObject prefabToSpawn1;
+    public GameObject prefabToSpawn2;
 
     private void OnEnable()
     {
@@ -21,6 +22,7 @@ public class Enemy : Character
     {
         while (true)
         {
+            StartCoroutine(FlickerCharacter());
             HP = HP - damage;
 
             if (HP <= float.Epsilon)
@@ -74,11 +76,14 @@ public class Enemy : Character
     }
     public GameObject SpawnObject()
     {
-        if(prefabToSpawn != null)
+        if(prefabToSpawn1 != null)
         {
-            return Instantiate(prefabToSpawn,transform.position, Quaternion.identity);
+            return Instantiate(prefabToSpawn1,transform.position, Quaternion.identity);
         }
-
+        if(prefabToSpawn2 != null)
+        {
+            return Instantiate(prefabToSpawn2,transform.position, Quaternion.identity);
+        }
         return null;
     }
     // ------------>
