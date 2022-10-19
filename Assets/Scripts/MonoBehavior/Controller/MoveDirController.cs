@@ -9,6 +9,7 @@ public class MoveDirController : MonoBehaviour
     //Rigidbody2D rigid2D;
 
     Animator animator;
+    bool a = true;
 
     void Start()
     {
@@ -19,6 +20,16 @@ public class MoveDirController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.LeftControl)){
+                if (a == true)
+                {
+                    a = false;
+                }
+                else 
+                {
+                    a = true;
+                }
+            }
         UpdateState();
     }
 
@@ -29,11 +40,13 @@ public class MoveDirController : MonoBehaviour
 
     private void MoveCharacter()
     {
-        movement.x = Input.GetAxisRaw("Horizontal");
-        movement.y = Input.GetAxisRaw("Vertical");
+        if (a)
+        {
+            movement.x = Input.GetAxisRaw("Horizontal");
+            movement.y = Input.GetAxisRaw("Vertical");
 
-        movement.Normalize();
-
+            movement.Normalize();
+        }
         //rigid2D.velocity = movement * movementSpeed;
     }
 

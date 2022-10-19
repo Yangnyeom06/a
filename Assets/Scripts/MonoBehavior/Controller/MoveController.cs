@@ -5,10 +5,13 @@ using UnityEngine;
 public class MoveController : MonoBehaviour
 {
     public float movementSpeed = 3.0f;
+    public float dashSpeed = 10.0f;
     Vector2 movement = new Vector2();
     Rigidbody2D rigid2D;
 
     Animator animator;
+
+
 
     void Start()
     {
@@ -19,14 +22,35 @@ public class MoveController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(Input.GetKeyDown(KeyCode.Space))
+        {
+            StartCoroutine(Dash(0.2f));
+        }
         UpdateState();
     }
 
     private void FixedUpdate()
     {
+        
         MoveCharacter();
+
     }
 
+
+    public IEnumerator Dash(float duration)
+    {
+        float time = 0.0f;
+
+        while (time < 1.0f)
+        {
+            time += Time.deltaTime / duration;
+
+            movementSpeed = 100.0f;
+
+            yield return null;
+        }
+        movementSpeed = 3.0f;
+    }
     private void MoveCharacter()
     {
         movement.x = Input.GetAxisRaw("Horizontal");

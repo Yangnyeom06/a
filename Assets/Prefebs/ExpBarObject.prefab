@@ -52,7 +52,7 @@ Canvas:
   m_RenderMode: 0
   m_Camera: {fileID: 0}
   m_PlaneDistance: 100
-  m_PixelPerfect: 1
+  m_PixelPerfect: 0
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
@@ -116,6 +116,7 @@ MonoBehaviour:
   Exp: {fileID: 11400000, guid: 7e65ed0abfd307d4b820b362d4e03305, type: 2}
   Character: {fileID: 0}
   ExpMeterImage: {fileID: 1011855334810661600}
+  maxExp: 10
 --- !u!1 &6863002539799072388
 GameObject:
   m_ObjectHideFlags: 0

@@ -7,8 +7,13 @@ public class RPGGameManager : MonoBehaviour
     public RPGCameraManager cameraManager;
     public static RPGGameManager sharedInstance = null;
     public SpawnPoint playerSpawnPoint;
-    public GameObject SkillChoiceSet;
+    public GameObject SkillSetPrefab;
+    //public Inventory inventoryPrefab;
+    public HealthBar healthBarPrefab;
+    public ExpBar expBarPrefab;
+    public static bool GameIsPaused = false;
     Player player1;
+    
     void Awake()
     {
         if (sharedInstance != null && sharedInstance != this)
@@ -26,24 +31,55 @@ public class RPGGameManager : MonoBehaviour
         SetupScene();
     }
 
-    void Update()
-    {
-        if (Input.GetButtonDown("Cancel"))
-        {
-            if (SkillChoiceSet.activeSelf)
-                SkillChoiceSet.SetActive(false);
-            else SkillChoiceSet.SetActive(true);
-            {
-                Time.timeScale = 0;
+/*
+    void Update(){
+        if(Input.GetKeyDown(KeyCode.Escape)){
+            if(GameIsPaused){
+                Resume();
+            } else {
+                Pause();
             }
         }
+        if (SkillSetPrefab.activeSelf == false)
+        {
+            GameIsPaused = false;
+            Time.timeScale = 1f;
+        }
+    }
+
+    public void Resume(){
+        Destroy(SkillSetPrefab);
+        Time.timeScale = 1f;
+        GameIsPaused = false;
+    }
+
+    public void Pause(){
+        Instantiate(SkillSetPrefab);
+        Time.timeScale = 0f;
+        GameIsPaused = true;
+    }
+
+    public void Resume(){
+        SkillSetPrefab.SetActive(false);
+        Time.timeScale = 1f;
+        GameIsPaused = false;
+    }
+
+    public void Pause(){
+        SkillSetPrefab.SetActive(true);
+        Time.timeScale = 0f;
+        GameIsPaused = true;
     }
 
     public void LevelUp()
     {
-        Time.timeScale = 0;
-        SkillChoiceSet.SetActive(true);
+        if(GameIsPaused){
+                Resume();
+            } else {
+                Pause();
+            }
     }
+ */   
 
     public void SetupScene()
     {

@@ -12,7 +12,9 @@ public class Player : Character
     HealthBar healthBar;
     public ExpBar expBarPrefab;
     ExpBar expBar;
-    RPGGameManager rpgGameManager;
+
+    //RPGGameManager rpgGameManager;
+
     public int playerLevel = 1;
 
     public void Start()
@@ -47,7 +49,7 @@ public class Player : Character
                 }
                 if (shouldDisappear)
                 {
-                    collision.gameObject.SetActive(false);
+                    Destroy(collision.gameObject);
                 }
 
             }
@@ -77,7 +79,7 @@ public class Player : Character
                         expBar.maxExp += 50;
                         maxExp += 50;
                         playerLevel += 1;
-                        //rpgGameManager.LevelUp();
+                        GameObject.Find("SkillManager").GetComponent<SkillManager>().LevelUp();
                         //expBar.Update();
                         print("player Level: " + playerLevel);
                         return true;

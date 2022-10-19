@@ -39,15 +39,14 @@
      <Compile Include="Assets\Scripts\Managers\RPGGameManager.cs" />
      <Compile Include="Assets\Scripts\MonoBehavior\Controller\MoveController.cs" />
      <Compile Include="Assets\Scripts\Scriptable Objects\Item.cs" />
+     <Compile Include="Assets\Scripts\MonoBehavior\Skill\SkillManager.cs" />
      <Compile Include="Assets\Scripts\MonoBehavior\Controller\MoveDirController.cs" />
-     <Compile Include="Assets\Scripts\MonoBehavior\PlayerData.cs" />
-     <Compile Include="Assets\Scripts\MonoBehavior\Inventroy\Slot.cs" />
+     <Compile Include="Assets\Scripts\MonoBehavior\Skill\Slot.cs" />
      <Compile Include="Assets\Scripts\MonoBehavior\SpawnPoint.cs" />
      <Compile Include="Assets\Scripts\MonoBehavior\Ammo.cs" />
-     <Compile Include="Assets\Scripts\MonoBehavior\Status.cs" />
      <Compile Include="Assets\Scripts\MonoBehavior\Enemy.cs" />
      <Compile Include="Assets\Scripts\Scriptable Objects\HitPoints.cs" />
-     <Compile Include="Assets\Scripts\MonoBehavior\Inventroy\Inventory.cs" />
+     <Compile Include="Assets\Scripts\MonoBehavior\Skill\Inventory.cs" />
      <Compile Include="Assets\Scripts\MonoBehavior\Consumable.cs" />
      <Compile Include="Assets\Scripts\MonoBehavior\Player.cs" />
      <Compile Include="Assets\Scripts\MonoBehavior\Wander.cs" />
@@ -58,6 +57,7 @@
      <Compile Include="Assets\Scripts\MonoBehavior\Weapon.cs" />
      <Compile Include="Assets\Scripts\Managers\RPGCameraManager.cs" />
      <Compile Include="Assets\Scripts\MonoBehavior\Bar\HealthBar.cs" />
+     <Compile Include="Assets\Scripts\MonoBehavior\CooldownUI.cs" />
      <None Include="Assets\Fonts\silkscreen\readme.txt" />
     <Reference Include="UnityEngine">
         <HintPath>G:\유니티\Unity 2020.3.37f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>

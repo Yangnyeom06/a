@@ -305,7 +305,6 @@ MonoBehaviour:
   inventoryPrefab: {fileID: 4346496163816016592, guid: 1728e27e91bb95a47a660d1bf1e60185, type: 3}
   healthBarPrefab: {fileID: 3742684377045053592, guid: b74c6d10e47418b4c97d4ef3be3707dc, type: 3}
   expBarPrefab: {fileID: -1111708292444585573, guid: 27e2420a03b8b794c9181b645ba59260, type: 3}
-  SkillChoiceSet: {fileID: 7074914853355460432, guid: e4154a4785ff2fd479fac9c0f2e14511, type: 3}
   playerLevel: 1
 --- !u!114 &-3360827163189170356
 MonoBehaviour:

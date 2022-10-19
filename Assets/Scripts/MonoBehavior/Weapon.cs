@@ -17,6 +17,7 @@ public class Weapon : MonoBehaviour
     public int poolSize;
     public float weaponSpeed;
     public bool samdosa = true;
+    bool a = true;
     MoveDirController moveDirController;
     void Awake()
     {
@@ -56,6 +57,16 @@ public class Weapon : MonoBehaviour
 
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.LeftControl)){
+                if (a == true)
+                {
+                    a = false;
+                }
+                else 
+                {
+                    a = true;
+                }
+            }
         Movement();
     }
 
@@ -75,69 +86,72 @@ public class Weapon : MonoBehaviour
 
     void Movement()
     {
-        movement.x = Input.GetAxisRaw("Horizontal");
-        movement.y = Input.GetAxisRaw("Vertical");
+        if (a == true)
+        {
+            movement.x = Input.GetAxisRaw("Horizontal");
+            movement.y = Input.GetAxisRaw("Vertical");
 
-        if ((movement.x > 0) && (movement.y > 0)) // 오른쪽 위
-        {
-            move_x = shootDistance;
-            move_y = shootDistance;
-            shoot_x = shoot;
-            shoot_y = -shoot;
-            
-        }
-        if ((movement.x > 0) && (movement.y < 0)) // 오른쪽 아래
-        {
-            move_x = shootDistance;
-            move_y = -shootDistance;
-            shoot_x = shoot;
-            shoot_y = shoot;
-        }
-        if ((movement.x < 0) && (movement.y > 0)) // 왼쪽 위
-        {
-            move_x = -shootDistance;
-            move_y = shootDistance;
-            shoot_x = -shoot;
-            shoot_y = -shoot;
-        }
-        if ((movement.x < 0) && (movement.y < 0)) // 왼쪽 아래
-        {
-            move_x = -shootDistance;
-            move_y = -shootDistance;
-            shoot_x = -shoot;
-            shoot_y = shoot;
-        }
-        if ((movement.x > 0) && (movement.y == 0)) // 오른쪽
-        {
-            move_x = shootDistance;
-            move_y = 0;
-            shoot_x = 0;
-            shoot_y = -shoot;
-        }
-        if ((movement.x < 0) && (movement.y == 0)) // 왼쪽
-        {
-            move_x = -shootDistance;
-            move_y = 0;
-            shoot_x = 0;
-            shoot_y = shoot;
-        }
-        if ((movement.x == 0) && (movement.y > 0)) // 위쪽
-        {
-            move_x = 0;
-            move_y = shootDistance;
-            shoot_x = shoot;
-            shoot_y = 0;
-        }
-        if ((movement.x == 0) && (movement.y < 0)) // 아래쪽
-        {
-            move_x = 0;
-            move_y = -shootDistance;
-            shoot_x = -shoot;
-            shoot_y = 0;
-        }
-        if ((movement.x == 0) && (movement.y == 0))
-        {
-            return;
+            if ((movement.x > 0) && (movement.y > 0)) // 오른쪽 위
+            {
+                move_x = shootDistance;
+                move_y = shootDistance;
+                shoot_x = shoot;
+                shoot_y = -shoot;
+                
+            }
+            if ((movement.x > 0) && (movement.y < 0)) // 오른쪽 아래
+            {
+                move_x = shootDistance;
+                move_y = -shootDistance;
+                shoot_x = shoot;
+                shoot_y = shoot;
+            }
+            if ((movement.x < 0) && (movement.y > 0)) // 왼쪽 위
+            {
+                move_x = -shootDistance;
+                move_y = shootDistance;
+                shoot_x = -shoot;
+                shoot_y = -shoot;
+            }
+            if ((movement.x < 0) && (movement.y < 0)) // 왼쪽 아래
+            {
+                move_x = -shootDistance;
+                move_y = -shootDistance;
+                shoot_x = -shoot;
+                shoot_y = shoot;
+            }
+            if ((movement.x > 0) && (movement.y == 0)) // 오른쪽
+            {
+                move_x = shootDistance;
+                move_y = 0;
+                shoot_x = 0;
+                shoot_y = -shoot;
+            }
+            if ((movement.x < 0) && (movement.y == 0)) // 왼쪽
+            {
+                move_x = -shootDistance;
+                move_y = 0;
+                shoot_x = 0;
+                shoot_y = shoot;
+            }
+            if ((movement.x == 0) && (movement.y > 0)) // 위쪽
+            {
+                move_x = 0;
+                move_y = shootDistance;
+                shoot_x = shoot;
+                shoot_y = 0;
+            }
+            if ((movement.x == 0) && (movement.y < 0)) // 아래쪽
+            {
+                move_x = 0;
+                move_y = -shootDistance;
+                shoot_x = -shoot;
+                shoot_y = 0;
+            }
+            if ((movement.x == 0) && (movement.y == 0))
+            {
+                return;
+            }
         }
     }
 
