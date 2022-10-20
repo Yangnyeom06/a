@@ -37,6 +37,7 @@
   </PropertyGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\Managers\RPGGameManager.cs" />
+     <Compile Include="Assets\Scripts\MonoBehavior\CooldownUI.cs" />
      <Compile Include="Assets\Scripts\MonoBehavior\Controller\MoveController.cs" />
      <Compile Include="Assets\Scripts\Scriptable Objects\Item.cs" />
      <Compile Include="Assets\Scripts\MonoBehavior\Skill\SkillManager.cs" />
@@ -57,7 +58,6 @@
      <Compile Include="Assets\Scripts\MonoBehavior\Weapon.cs" />
      <Compile Include="Assets\Scripts\Managers\RPGCameraManager.cs" />
      <Compile Include="Assets\Scripts\MonoBehavior\Bar\HealthBar.cs" />
-     <Compile Include="Assets\Scripts\MonoBehavior\CooldownUI.cs" />
      <None Include="Assets\Fonts\silkscreen\readme.txt" />
     <Reference Include="UnityEngine">
         <HintPath>G:\유니티\Unity 2020.3.37f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>

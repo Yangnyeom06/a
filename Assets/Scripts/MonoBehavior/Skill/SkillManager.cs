@@ -9,34 +9,45 @@ public class SkillManager : MonoBehaviour
     public GameObject SkillChoice1;
     public GameObject SkillChoice2;
     public GameObject SkillChoice3;
-
-
-    void Update(){
-        if(Input.GetKeyDown(KeyCode.Escape)){
-            if(GameIsPaused){
-                Resume();
-            } else {
-                Pause();
-            }
-        }
-        if (SkillSetPrefab.activeSelf == false)
+    public int SkillCount;
+    
+    void Start()
+    {
+        List<int> SkillList = new List<int>();
+        for (int i = 0; i < SkillCount; ++i)
         {
-            GameIsPaused = false;
-            Time.timeScale = 1f;
+            SkillList.Add(i);
         }
+
+    }
+    void Update()
+    {
+
     }
 
-    public void Resume(){
+    
+    public void Resume()
+    {
         Destroy(SkillSetPrefab);
         Time.timeScale = 1f;
         GameIsPaused = false;
     }
 
-    public void Pause(){
+    public void Pause()
+    {
+        SkillDraw();
         Instantiate(SkillSetPrefab);
+
         Time.timeScale = 0f;
         GameIsPaused = true;
     }
+
+    public void SkillDraw()
+    {
+        
+        
+    }
+
     public void LevelUp()
     {
         if(GameIsPaused){
@@ -45,9 +56,10 @@ public class SkillManager : MonoBehaviour
                 Pause();
             }
     }
-
+/*
     public void Remove()
     {
-        Destroy(SkillSetPrefab.gameObject);
+        Destroy(SkillSetPrefab);
     }
+    */
 }
