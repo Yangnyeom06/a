@@ -37,7 +37,7 @@ public class Wander : MonoBehaviour
 
     void Update()
     {
-        //Debug.DrawLine(rb2d.position, endPosition, Color.red);
+        
     }
 
     public IEnumerator WanderRoutine()
@@ -75,6 +75,7 @@ public class Wander : MonoBehaviour
     public IEnumerator Move(Rigidbody2D rigidBodyToMove, float speed)
     {
         float remainingDistance = (transform.position - endPosition).sqrMagnitude;
+        float distance;
 
         while(remainingDistance > float.Epsilon)
         {
@@ -86,15 +87,25 @@ public class Wander : MonoBehaviour
 
             if(rigidBodyToMove != null)
             {
-                animator.SetBool("isWalking", true);
-                 Vector3 newPosition = Vector3.MoveTowards(rigidBodyToMove.position, endPosition, speed * Time.deltaTime);
-
+                //animator.SetBool("isWalking", true);
+                Vector3 newPosition = Vector3.MoveTowards(rigidBodyToMove.position, endPosition, speed * Time.deltaTime);
                 rb2d.MovePosition(newPosition);
+                distance = transform.position.x - endPosition.x;
+                if (distance <= 0){
+                    animator.SetBool("isWalkingRight", true);
+                    animator.SetBool("isWalkingLeft", false);
+                }
+                if (distance > 0){
+                    animator.SetBool("isWalkingLeft", true);
+                    animator.SetBool("isWalkingRight", false);
+                }
                 remainingDistance = (transform.position - endPosition).sqrMagnitude;
+                
             }
             yield return new WaitForFixedUpdate();
         }
-        animator.SetBool("isWalking", false);
+        animator.SetBool("isWalkingRight", false);
+        animator.SetBool("isWalkingLeft", false);
     }
 
     void OnTriggerEnter2D(Collider2D collision)
@@ -116,7 +127,8 @@ public class Wander : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            animator.SetBool("isWalking", false);
+            animator.SetBool("isWalkingRight", false);
+            animator.SetBool("isWalkingLeft", false);
             currentSpeed = wanderSpeed;
 
             if(moveCoroutine != null)
@@ -128,13 +140,13 @@ public class Wander : MonoBehaviour
     }
 
 
-/*
-    void OnDrawGizmos()
+
+    /*void OnDrawGizmos()
     {
         if(CircleCollider2D != null)
         {
             Gizmos.DrawWireSphere(transform.position, CircleCollider2D.radius);
         }
-    }
-*/
+    }*/
+
 }

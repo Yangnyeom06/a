@@ -7,12 +7,11 @@ public class RPGGameManager : MonoBehaviour
     public RPGCameraManager cameraManager;
     public static RPGGameManager sharedInstance = null;
     public SpawnPoint playerSpawnPoint;
-    public GameObject SkillSetPrefab;
     //public Inventory inventoryPrefab;
     public HealthBar healthBarPrefab;
     public ExpBar expBarPrefab;
     public static bool GameIsPaused = false;
-    Player player1;
+
     
     void Awake()
     {
@@ -30,7 +29,6 @@ public class RPGGameManager : MonoBehaviour
     {
         SetupScene();
     }
-
 /*
     void Update(){
         if(Input.GetKeyDown(KeyCode.Escape)){
@@ -40,10 +38,54 @@ public class RPGGameManager : MonoBehaviour
                 Pause();
             }
         }
-        if (SkillSetPrefab.activeSelf == false)
+    }
+    public void Resume()
+    {
+        print("작동");
+
+        Time.timeScale = 1f;
+        GameIsPaused = false;
+        
+    }
+
+
+    public void Pause()
+    {
+        Time.timeScale = 0f;
+        GameIsPaused = true;
+    }
+
+*/
+    public void SetupScene()
+    {
+        SpawnPlayer();
+    }
+    public void SpawnPlayer()
+    {
+        if (playerSpawnPoint != null)
         {
-            GameIsPaused = false;
-            Time.timeScale = 1f;
+            GameObject player = playerSpawnPoint.SpawnObject();
+
+            // 수정한 부분 <------
+            cameraManager.virtualCamera.Follow = player.transform;
+            // ------>
+        }
+
+    }
+}
+
+
+
+
+
+/*
+    void Update(){
+        if(Input.GetKeyDown(KeyCode.Escape)){
+            if(GameIsPaused){
+                Resume();
+            } else {
+                Pause();
+            }
         }
     }
 
@@ -81,20 +123,3 @@ public class RPGGameManager : MonoBehaviour
     }
  */   
 
-    public void SetupScene()
-    {
-        SpawnPlayer();
-    }
-    public void SpawnPlayer()
-    {
-        if (playerSpawnPoint != null)
-        {
-            GameObject player = playerSpawnPoint.SpawnObject();
-
-            // 수정한 부분 <------
-            cameraManager.virtualCamera.Follow = player.transform;
-            // ------>
-        }
-
-    }
-}

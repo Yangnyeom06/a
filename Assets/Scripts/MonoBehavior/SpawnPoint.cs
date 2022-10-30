@@ -25,6 +25,7 @@ public class SpawnPoint : MonoBehaviour
     {
         if(prefabToSpawn != null)
         {
+            print("소환");
             return Instantiate(prefabToSpawn,transform.position, Quaternion.identity);
         }
         

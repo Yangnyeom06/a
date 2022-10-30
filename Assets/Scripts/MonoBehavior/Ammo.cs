@@ -14,7 +14,6 @@ public class Ammo : MonoBehaviour
             StartCoroutine(enemy.DamageCharacter(damageInflicted, 0.0f));
 
             //gameObject.SetActive(false);
-
         }
     }
 }

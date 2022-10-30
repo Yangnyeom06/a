@@ -18,7 +18,7 @@ public class Enemy : Character
         ResetCharacter();
     }
 
-    public override IEnumerator DamageCharacter(int damage, float interval)
+    public override IEnumerator DamageCharacter(float damage, float interval)
     {
         while (true)
         {

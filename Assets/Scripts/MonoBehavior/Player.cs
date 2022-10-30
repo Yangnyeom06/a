@@ -12,6 +12,10 @@ public class Player : Character
     HealthBar healthBar;
     public ExpBar expBarPrefab;
     ExpBar expBar;
+    public SkillChoices SkillSetPrefab;
+    SkillChoices skillset;
+    public static bool GameIsPaused = false;
+
 
     //RPGGameManager rpgGameManager;
 
@@ -21,7 +25,17 @@ public class Player : Character
     {
         inventory = Instantiate(inventoryPrefab);
     }
-    
+
+    /*void Update(){
+        if(Input.GetKeyDown(KeyCode.Escape)){
+            if(GameIsPaused){
+                Resume();
+            } else {
+                Pause();
+            }
+        }
+    }
+*/
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("CanBePickedUp"))
@@ -79,6 +93,7 @@ public class Player : Character
                         expBar.maxExp += 50;
                         maxExp += 50;
                         playerLevel += 1;
+                        //LevelUp();
                         GameObject.Find("SkillManager").GetComponent<SkillManager>().LevelUp();
                         //expBar.Update();
                         print("player Level: " + playerLevel);
@@ -106,7 +121,8 @@ public class Player : Character
         expBar.Character = this;
     }
 
-    public override IEnumerator DamageCharacter(int damage, float interval)
+
+    public override IEnumerator DamageCharacter(float damage, float interval)
     {
         while (true)
         {
@@ -128,6 +144,8 @@ public class Player : Character
             }
         }
     }
+
+
 
     public override void KillCharacter()
     {

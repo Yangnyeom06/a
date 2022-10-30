@@ -43,8 +43,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5254f86c4d6e4d4bb386b7042ae7b81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SkillSetPrefab: {fileID: 8719308268795146643, guid: 590ef73b6ff450447a52bfcefe7fee4e, type: 3}
+  SkillSetPrefab: {fileID: -2404842611572169539, guid: 590ef73b6ff450447a52bfcefe7fee4e, type: 3}
   SkillChoice1: {fileID: 2811186439916401498, guid: 88b54249b36805e4fa420065a7078c64, type: 3}
   SkillChoice2: {fileID: 394138476575182138, guid: 7fb04783816404e4ba1bc24fdbffa77d, type: 3}
   SkillChoice3: {fileID: 8850021112220435500, guid: e1e453ec8953087408ca4b279e800109, type: 3}
-  Skill: {fileID: 0}
+  SkillCount: 10
