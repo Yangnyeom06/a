@@ -10,17 +10,19 @@ public class SkillManager : MonoBehaviour
     public GameObject SkillChoice1;
     public GameObject SkillChoice2;
     public GameObject SkillChoice3;
+    SkillList skill;
 
     public int SkillCount;
+    private int draw;
     
     void Start()
     {
-        List<int> SkillList = new List<int>();
+        List<int> Skill_List = new List<int>();
         for (int i = 0; i < SkillCount; ++i)
         {
-            SkillList.Add(i);
+            Skill_List.Add(i);
         }
-        ResetSkillChoices();
+        skillset = Instantiate(SkillSetPrefab);
     }
     
 
@@ -37,8 +39,22 @@ public class SkillManager : MonoBehaviour
 
     public void ResetSkillChoices()
     {
-        skillset = Instantiate(SkillSetPrefab);
-        //skillset.Character = this;
+        draw = Random.Range(0, 3);
+
+        switch (draw)
+        {
+            case 0:
+                skill.Skill1();
+                break;
+                
+            case 1:
+                skill.Skill2();
+                break;
+
+            case 2:
+                skill.Skill3();
+                break;
+        }
     }
 
 
@@ -65,25 +81,9 @@ public class SkillManager : MonoBehaviour
         GameIsPaused = true;
     }
 
-    public void SkillDraw()
-    {
-        
-        
-    }
-
-    public void De()
-    {
-
-    }
 
     public void LevelUp()
     {
         Pause();
     }
-/*
-    public void Remove()
-    {
-        Destroy(SkillSetPrefab);
-    }
-    */
 }

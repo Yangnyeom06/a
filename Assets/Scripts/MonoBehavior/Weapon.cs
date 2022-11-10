@@ -12,6 +12,10 @@ public class Weapon : MonoBehaviour
     public int shoot = 3;
     int shoot_x;
     int shoot_y;
+    float rotation_left = 0;
+    float rotation_right = 0;
+    float rotation_horizon = 0;
+
     public GameObject ammoPrefab;
     static List<GameObject> ammoPool;
     public int poolSize;
@@ -19,7 +23,7 @@ public class Weapon : MonoBehaviour
     public bool samdosa = true;
     bool a = true;
     MoveDirController moveDirController;
-    void Awake()
+    public void Awake()
     {
         if (ammoPool == null)
         {
@@ -47,15 +51,15 @@ public class Weapon : MonoBehaviour
         }
         return null;
     }
-    void Start()
+    public void Start()
     {
         moveDirController = GetComponent<MoveDirController>();
-        InvokeRepeating("OnEnable", 0, shootDelay);
-        InvokeRepeating("OnEnable", 0.2f, shootDelay);
-        InvokeRepeating("OnEnable", 0.7f, shootDelay);
+        InvokeRepeating("FireAmmo", 0, shootDelay);
+        InvokeRepeating("FireAmmo", 0.2f, shootDelay);
+        InvokeRepeating("FireAmmo", 0.7f, shootDelay);
     }
 
-    void Update()
+    public void Update()
     {
         if (Input.GetKeyDown(KeyCode.LeftControl)){
                 if (a == true)
@@ -71,7 +75,7 @@ public class Weapon : MonoBehaviour
     }
 
 
-    void OnDestroy()
+    public void OnDestroy()
     {
         if (this.gameObject.activeInHierarchy)
         {
@@ -79,12 +83,9 @@ public class Weapon : MonoBehaviour
         }
     }
 
-    private void OnEnable()
-    {
-        FireAmmo();
-    }
 
-    void Movement()
+
+    public void Movement()
     {
         if (a == true)
         {
@@ -97,7 +98,10 @@ public class Weapon : MonoBehaviour
                 move_y = shootDistance;
                 shoot_x = shoot;
                 shoot_y = -shoot;
-                
+                rotation_left = -25;
+                rotation_right = -65;
+                rotation_horizon = -45;
+
             }
             if ((movement.x > 0) && (movement.y < 0)) // 오른쪽 아래
             {
@@ -105,6 +109,9 @@ public class Weapon : MonoBehaviour
                 move_y = -shootDistance;
                 shoot_x = shoot;
                 shoot_y = shoot;
+                rotation_left = -155;
+                rotation_right = -115;
+                rotation_horizon = 45;
             }
             if ((movement.x < 0) && (movement.y > 0)) // 왼쪽 위
             {
@@ -112,6 +119,9 @@ public class Weapon : MonoBehaviour
                 move_y = shootDistance;
                 shoot_x = -shoot;
                 shoot_y = -shoot;
+                rotation_left = 25;
+                rotation_right = 65;
+                rotation_horizon = 45;
             }
             if ((movement.x < 0) && (movement.y < 0)) // 왼쪽 아래
             {
@@ -119,6 +129,9 @@ public class Weapon : MonoBehaviour
                 move_y = -shootDistance;
                 shoot_x = -shoot;
                 shoot_y = shoot;
+                rotation_left = 155;
+                rotation_right = 115;
+                rotation_horizon = -45;
             }
             if ((movement.x > 0) && (movement.y == 0)) // 오른쪽
             {
@@ -126,6 +139,9 @@ public class Weapon : MonoBehaviour
                 move_y = 0;
                 shoot_x = 0;
                 shoot_y = -shoot;
+                rotation_left = -75;
+                rotation_right = 75;
+                rotation_horizon = 90;
             }
             if ((movement.x < 0) && (movement.y == 0)) // 왼쪽
             {
@@ -133,6 +149,9 @@ public class Weapon : MonoBehaviour
                 move_y = 0;
                 shoot_x = 0;
                 shoot_y = shoot;
+                rotation_left = -75;
+                rotation_right = 75;
+                rotation_horizon = 90;
             }
             if ((movement.x == 0) && (movement.y > 0)) // 위쪽
             {
@@ -140,6 +159,9 @@ public class Weapon : MonoBehaviour
                 move_y = shootDistance;
                 shoot_x = shoot;
                 shoot_y = 0;
+                rotation_left = 15;
+                rotation_right = -15;
+                rotation_horizon = 0;
             }
             if ((movement.x == 0) && (movement.y < 0)) // 아래쪽
             {
@@ -147,6 +169,9 @@ public class Weapon : MonoBehaviour
                 move_y = -shootDistance;
                 shoot_x = -shoot;
                 shoot_y = 0;
+                rotation_left = 15;
+                rotation_right = -15;
+                rotation_horizon = 0;
             }
             if ((movement.x == 0) && (movement.y == 0))
             {
@@ -155,7 +180,7 @@ public class Weapon : MonoBehaviour
         }
     }
 
-    void FireAmmo()
+    public void FireAmmo()
     {
         GameObject ammo = SpawnAmmo(transform.position);
         Vector3 Position = new Vector3(ammo.transform.position.x + move_x, ammo.transform.position.y + move_y);
@@ -164,33 +189,38 @@ public class Weapon : MonoBehaviour
         if (ammo != null)
         {
             Arc arcScript = ammo.GetComponent<Arc>();
+            arcScript.transform.rotation = Quaternion.Euler(0, 0, rotation_horizon);
+
             float travelDuration = 1.0f / weaponSpeed;
             StartCoroutine(arcScript.TravelArc(Position, travelDuration));
         }
-        if (samdosa == true)
+        /*if (samdosa == true)
         {
             FireAmmoLeft();
             FireAmmoRight();
-        }     
+        }    */ 
     }
-    void FireAmmoLeft()
+    public void FireAmmoLeft()
     {
         GameObject ammo = SpawnAmmo(transform.position);
         Vector3 Position = new Vector3(ammo.transform.position.x - shoot_x + move_x, ammo.transform.position.y - shoot_y + move_y);
         if (ammo != null)
         {
             Arc arcScript = ammo.GetComponent<Arc>();
+            arcScript.transform.rotation = Quaternion.Euler(0, 0, rotation_left);
+
             float travelDuration = 1.0f / weaponSpeed;
             StartCoroutine(arcScript.TravelArc(Position, travelDuration));
         }
     }
-    void FireAmmoRight()
+    public void FireAmmoRight()
     {
         GameObject ammo = SpawnAmmo(transform.position);
         Vector3 Position = new Vector3(ammo.transform.position.x + shoot_x + move_x, ammo.transform.position.y + shoot_y + move_y);
         if (ammo != null)
         {
             Arc arcScript = ammo.GetComponent<Arc>();
+            arcScript.transform.rotation = Quaternion.Euler(0, 0, rotation_right);
             float travelDuration = 1.0f / weaponSpeed;
             StartCoroutine(arcScript.TravelArc(Position, travelDuration));
         }

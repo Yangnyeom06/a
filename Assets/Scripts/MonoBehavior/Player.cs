@@ -12,8 +12,9 @@ public class Player : Character
     HealthBar healthBar;
     public ExpBar expBarPrefab;
     ExpBar expBar;
-    public SkillChoices SkillSetPrefab;
-    SkillChoices skillset;
+    SkillList skill;
+    Weapon weapon;
+
     public static bool GameIsPaused = false;
 
 
@@ -24,16 +25,15 @@ public class Player : Character
     public void Start()
     {
         inventory = Instantiate(inventoryPrefab);
-    }
+        skill = GetComponent<SkillList>();
+        weapon = GetComponent<Weapon>();
 
-    /*void Update(){
-        if(Input.GetKeyDown(KeyCode.Escape)){
-            if(GameIsPaused){
-                Resume();
-            } else {
-                Pause();
-            }
-        }
+    }
+/*
+    void Update(){
+        if(Input.GetKeyDown(KeyCode.Q)){weapon.FireAmmo();}
+        if(Input.GetKeyDown(KeyCode.W)){skill.Skill2();}
+        if(Input.GetKeyDown(KeyCode.E)){skill.Skill3();}
     }
 */
     private void OnTriggerEnter2D(Collider2D collision)

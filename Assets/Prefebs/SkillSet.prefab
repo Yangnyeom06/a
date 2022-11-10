@@ -641,6 +641,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SkillChoice (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 394138476575182138, guid: 7fb04783816404e4ba1bc24fdbffa77d, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3643569197545706978, guid: 7fb04783816404e4ba1bc24fdbffa77d, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5

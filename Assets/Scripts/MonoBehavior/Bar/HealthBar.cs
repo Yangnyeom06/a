@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class HealthBar : MonoBehaviour
 {
@@ -9,7 +10,7 @@ public class HealthBar : MonoBehaviour
     [HideInInspector]
     public Player Character;
     public Image HPMeterImage;
-    public Text HPText;
+    public TextMeshProUGUI HPText;
     float maxHP;
     void Start()
     {

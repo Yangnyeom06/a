@@ -40,7 +40,7 @@ public class MoveController : MonoBehaviour
     public IEnumerator Dash(float duration)
     {
         float time = 0.0f;
-
+        float speed = movementSpeed;
         while (time < 1.0f)
         {
             time += Time.deltaTime / duration;
@@ -49,7 +49,7 @@ public class MoveController : MonoBehaviour
 
             yield return null;
         }
-        movementSpeed = 3.0f;
+        movementSpeed = speed;
     }
     private void MoveCharacter()
     {
