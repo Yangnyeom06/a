@@ -20,10 +20,13 @@ public class Enemy : Character
 
     public override IEnumerator DamageCharacter(float damage, float interval)
     {
+        
         while (true)
         {
             StartCoroutine(FlickerCharacter());
             HP = HP - damage;
+            GameObject.Find("CardSlotSkill(Clone)").GetComponent<GaugeBar>().GaugeCharge(damage);
+
 
             if (HP <= float.Epsilon)
             {
@@ -31,6 +34,8 @@ public class Enemy : Character
                 GameObject item = SpawnObject();
                 break;
             }
+
+
             if (interval > float.Epsilon)
             {
                 yield return new WaitForSeconds(interval);

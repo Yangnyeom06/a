@@ -10,6 +10,8 @@ public abstract class Character : MonoBehaviour
     public float StartingHP;
     public float maxExp;
     public float minExp;
+    public float minGauge;
+    public float maxGauge;
     
     public virtual void KillCharacter()
     {

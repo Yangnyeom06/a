@@ -7,4 +7,5 @@ public class HitPoints : ScriptableObject
 {
     public float hpValue;
     public float expValue;
+    public float gaugeValue;
 }

@@ -20,7 +20,7 @@ public class Weapon : MonoBehaviour
     static List<GameObject> ammoPool;
     public int poolSize;
     public float weaponSpeed;
-    public bool samdosa = true;
+    public bool samdusa = true;
     bool a = true;
     MoveDirController moveDirController;
     public void Awake()
@@ -194,7 +194,7 @@ public class Weapon : MonoBehaviour
             float travelDuration = 1.0f / weaponSpeed;
             StartCoroutine(arcScript.TravelArc(Position, travelDuration));
         }
-        /*if (samdosa == true)
+        /*if (samdusa == true)
         {
             FireAmmoLeft();
             FireAmmoRight();

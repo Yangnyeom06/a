@@ -5,6 +5,7 @@ public class Player : Character
 {
     public HitPoints HP;
     public HitPoints Exp;
+    public HitPoints Gauge;
     public Inventory inventoryPrefab;
     Inventory inventory;
 
@@ -12,6 +13,8 @@ public class Player : Character
     HealthBar healthBar;
     public ExpBar expBarPrefab;
     ExpBar expBar;
+    public GaugeBar gaugeBarPrefab;
+    GaugeBar gaugeBar;
     SkillList skill;
     Weapon weapon;
 
@@ -93,9 +96,7 @@ public class Player : Character
                         expBar.maxExp += 50;
                         maxExp += 50;
                         playerLevel += 1;
-                        //LevelUp();
                         GameObject.Find("SkillManager").GetComponent<SkillManager>().LevelUp();
-                        //expBar.Update();
                         print("player Level: " + playerLevel);
                         return true;
                     }
@@ -103,6 +104,7 @@ public class Player : Character
         }
         return false;
     }
+
 
 
     // 수정한 부분 <-------
@@ -116,9 +118,14 @@ public class Player : Character
         healthBar = Instantiate(healthBarPrefab);
         HP.hpValue = StartingHP;
         healthBar.Character = this;
+
         expBar = Instantiate(expBarPrefab);
         Exp.expValue = minExp;
         expBar.Character = this;
+
+        gaugeBar = Instantiate(gaugeBarPrefab);
+        Gauge.gaugeValue = minGauge;
+        gaugeBar.Character = this;
     }
 
 
@@ -153,6 +160,7 @@ public class Player : Character
 
         Destroy(healthBar.gameObject);
         Destroy(expBar.gameObject);
+        Destroy(gaugeBar.gameObject);
     }
 
     // -------->

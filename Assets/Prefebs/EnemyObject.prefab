@@ -144,6 +144,9 @@ MonoBehaviour:
   StartingHP: 180
   maxExp: 0
   minExp: 0
+  minGauge: 0
+  maxGauge: 500
+  currentGauge: 0
   damageStrength: 0
   prefabToSpawn1: {fileID: 6959787854110540120, guid: 1f887eb85319d1a4a849b825227585e0, type: 3}
   prefabToSpawn2: {fileID: 4443353359000742721, guid: 2050e95f0b994994d824c2a36ccd501a, type: 3}

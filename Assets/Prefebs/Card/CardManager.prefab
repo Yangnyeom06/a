@@ -1,0 +1,84 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &8627358071233089658
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8627358071233089652}
+  - component: {fileID: 8627358071233089653}
+  m_Layer: 0
+  m_Name: CardManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8627358071233089652
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8627358071233089658}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.53652, y: -0.90203255, z: -10.8837185}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8627358071233089653
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8627358071233089658}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 158eea2f4a55f6f44bee25db88fefdfb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cardlist:
+  - cardName: Samdusa
+    cardImage: {fileID: 7024648501981196136, guid: 9d09f9d0868fc2346991667ccb2d0c97, type: 3}
+  - cardName: Madness
+    cardImage: {fileID: -1145144668836272637, guid: 9d09f9d0868fc2346991667ccb2d0c97, type: 3}
+  - cardName: Twisted_Fate
+    cardImage: {fileID: 8963368785945452489, guid: 9d09f9d0868fc2346991667ccb2d0c97, type: 3}
+  - cardName: Corrosion
+    cardImage: {fileID: -7415955986125602904, guid: 9d09f9d0868fc2346991667ccb2d0c97, type: 3}
+  - cardName: Ghost
+    cardImage: {fileID: -2922113337684369405, guid: 9d09f9d0868fc2346991667ccb2d0c97, type: 3}
+  - cardName: Culled
+    cardImage: {fileID: 5610456433865955097, guid: 9d09f9d0868fc2346991667ccb2d0c97, type: 3}
+  - cardName: Balance
+    cardImage: {fileID: 3929718611160277314, guid: 9d09f9d0868fc2346991667ccb2d0c97, type: 3}
+  - cardName: Judgement
+    cardImage: {fileID: -657809462729225012, guid: 9d09f9d0868fc2346991667ccb2d0c97, type: 3}
+  - cardName: Wheel_Of_Fortune
+    cardImage: {fileID: 2364552672744995599, guid: 9d09f9d0868fc2346991667ccb2d0c97, type: 3}
+  - cardName: Emperor
+    cardImage: {fileID: -8096500043677648198, guid: 9d09f9d0868fc2346991667ccb2d0c97, type: 3}
+  - cardName: Star
+    cardImage: {fileID: 2975849240591541955, guid: 9d09f9d0868fc2346991667ccb2d0c97, type: 3}
+  - cardName: Moon
+    cardImage: {fileID: 8948946568479395471, guid: 9d09f9d0868fc2346991667ccb2d0c97, type: 3}
+  fieldCardPrefab: {fileID: 3043038946880502060, guid: 72e4130fed8468f46949fea9b0356cde, type: 3}
+  pos:
+  - {x: 0, y: -10, z: 0}
+  - {x: 5, y: -10, z: 0}
+  - {x: 10, y: -10, z: 0}
+  - {x: 15, y: -10, z: 0}
+  - {x: 20, y: -10, z: 0}
+  - {x: 25, y: -10, z: 0}
+  - {x: 30, y: -10, z: 0}
+  - {x: 35, y: -10, z: 0}
+  - {x: 40, y: -10, z: 0}
+  - {x: 45, y: -10, z: 0}
+  - {x: 50, y: -10, z: 0}
+  - {x: 55, y: -10, z: 0}

@@ -18,7 +18,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8083614923874865372
 Transform:
   m_ObjectHideFlags: 0
@@ -73,7 +73,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 8e0852261d8744842aee99f7a1e2c792, type: 3}
+  m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -81,7 +81,7 @@ SpriteRenderer:
   m_Size: {x: 1.28, y: 1.28}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!95 &8083614923874865373
@@ -133,6 +133,8 @@ GameObject:
   - component: {fileID: 5734343586985202247}
   - component: {fileID: -3360827163189170356}
   - component: {fileID: -8187336324946679116}
+  - component: {fileID: 2609169880356985271}
+  - component: {fileID: 8817564286134085559}
   m_Layer: 0
   m_Name: PlayerObject
   m_TagString: Player
@@ -194,7 +196,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 53
+  m_SortingOrder: 1
   m_Sprite: {fileID: -2311659948842064771, guid: 7d936061eb3a69f42951c34b86690e46, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -279,13 +281,14 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8083614924206487207}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 40dc1fa35c438ff479be9f4e77cfeaa5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   movementSpeed: 10
-  dashSpeed: 10
+  dashSpeed: 25
+  dashTime: 0.4
 --- !u!114 &5734343586985202247
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -293,7 +296,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8083614924206487207}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f8bbb388b99bfaf4380167ac426a75d5, type: 3}
   m_Name: 
@@ -302,11 +305,15 @@ MonoBehaviour:
   StartingHP: 5
   maxExp: 10
   minExp: 0
+  minGauge: 0
+  maxGauge: 5000
   HP: {fileID: 11400000, guid: 7e65ed0abfd307d4b820b362d4e03305, type: 2}
   Exp: {fileID: 11400000, guid: 7e65ed0abfd307d4b820b362d4e03305, type: 2}
+  Gauge: {fileID: 11400000, guid: 7e65ed0abfd307d4b820b362d4e03305, type: 2}
   inventoryPrefab: {fileID: 4346496163816016592, guid: 1728e27e91bb95a47a660d1bf1e60185, type: 3}
   healthBarPrefab: {fileID: 3742684377045053592, guid: b74c6d10e47418b4c97d4ef3be3707dc, type: 3}
   expBarPrefab: {fileID: -1111708292444585573, guid: 27e2420a03b8b794c9181b645ba59260, type: 3}
+  gaugeBarPrefab: {fileID: 2712760227495678030, guid: 4e7703bda5a5a8748b92e21a5ff84cc4, type: 3}
   playerLevel: 1
 --- !u!114 &-3360827163189170356
 MonoBehaviour:
@@ -315,7 +322,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8083614924206487207}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2accc996ef6f48a4f98d862e90336347, type: 3}
   m_Name: 
@@ -326,8 +333,34 @@ MonoBehaviour:
   ammoPrefab: {fileID: 8870860047560332914, guid: 88a0dec723563e746a4d14985dd190c7, type: 3}
   poolSize: 30
   weaponSpeed: 1.5
-  samdosa: 0
+  samdusa: 1
 --- !u!114 &-8187336324946679116
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8083614924206487207}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 486bf197d2f078d46b425d0e711c247b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2609169880356985271
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8083614924206487207}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49efb810151f4a846b53c0fbd6123904, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cards: []
+  CardSlotCnt: 2
+--- !u!114 &8817564286134085559
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -336,6 +369,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 8083614924206487207}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 486bf197d2f078d46b425d0e711c247b, type: 3}
+  m_Script: {fileID: 11500000, guid: 052b766429a1f5f45ae2e82cfb8e2b21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  character: 0
+  chars:
+  - {fileID: 8817564286134085559}
+  - {fileID: 0}
+  - {fileID: 0}

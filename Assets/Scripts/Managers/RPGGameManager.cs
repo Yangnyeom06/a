@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class RPGGameManager : MonoBehaviour
 {
-    public RPGCameraManager cameraManager;
+    //public RPGCameraManager cameraManager;
     public static RPGGameManager sharedInstance = null;
-    public SpawnPoint playerSpawnPoint;
+    public PlayerRespawn playerSpawnPoint;
     //public Inventory inventoryPrefab;
     public HealthBar healthBarPrefab;
     public ExpBar expBarPrefab;
@@ -24,13 +24,30 @@ public class RPGGameManager : MonoBehaviour
             sharedInstance = this;
         }
     }
-
+/*
     void Start()
     {
         SetupScene();
     }
-/*
-    void Update(){
+public void SetupScene()
+    {
+        SpawnPlayer();
+    }
+public void SpawnPlayer()
+    {
+        if (playerSpawnPoint != null)
+        {
+            //GameObject player = playerSpawnPoint.player;
+
+            // 수정한 부분 <------
+            cameraManager.virtualCamera.Follow = playerSpawnPoint.player.transform;
+            // ------>
+        }
+
+    }*/
+}
+
+/*     void Update(){
         if(Input.GetKeyDown(KeyCode.Escape)){
             if(GameIsPaused){
                 Resume();
@@ -56,23 +73,7 @@ public class RPGGameManager : MonoBehaviour
     }
 
 */
-    public void SetupScene()
-    {
-        SpawnPlayer();
-    }
-    public void SpawnPlayer()
-    {
-        if (playerSpawnPoint != null)
-        {
-            GameObject player = playerSpawnPoint.SpawnObject();
-
-            // 수정한 부분 <------
-            cameraManager.virtualCamera.Follow = player.transform;
-            // ------>
-        }
-
-    }
-}
+   
 
 
 

@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Ammo : MonoBehaviour
 {
+    GaugeBar GaugeBar;
+    Player player;
     public int damageInflicted;
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -12,8 +14,8 @@ public class Ammo : MonoBehaviour
         {
             Enemy enemy = collision.gameObject.GetComponent<Enemy>();
             StartCoroutine(enemy.DamageCharacter(damageInflicted, 0.0f));
+            //GameObject.Find("CardSlotSkill(Clone)").GetComponent<GaugeBar>().GaugeCharge(damageInflicted);
 
-            //gameObject.SetActive(false);
         }
     }
 }
