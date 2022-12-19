@@ -4,7 +4,7 @@ using UnityEngine;
 
 public enum CharacterChoice
 {
-    점성가, 잠금
+    점성가, 잠금1, 잠금2
 }
 
 public class DataManager : MonoBehaviour

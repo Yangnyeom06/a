@@ -5,9 +5,13 @@ using UnityEngine.UI;
 
 public class CardSlot : MonoBehaviour
 {
+    public int slotnum;
     public Card card;
     public Image cardIcon;
+    CardInventoryUI cardInvenUI;
 
+
+    
     public void UpdateCardSlotUI()
     {
         cardIcon.sprite = card.cardImage;

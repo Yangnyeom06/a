@@ -23,7 +23,7 @@ public class Weapon : MonoBehaviour
     public bool samdusa = true;
     bool a = true;
     MoveDirController moveDirController;
-    public void Awake()
+    public void OnEnable()
     {
         if (ammoPool == null)
         {
@@ -35,7 +35,6 @@ public class Weapon : MonoBehaviour
             ammoObject.SetActive(false);
             ammoPool.Add(ammoObject);
         }
-
     }
     
     GameObject SpawnAmmo(Vector3 location)

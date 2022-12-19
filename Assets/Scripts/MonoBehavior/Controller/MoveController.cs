@@ -9,7 +9,7 @@ public class MoveController : MonoBehaviour
 
     public float dashSpeed = 50.0f;
     public float dashTime;
-    Vector2 movement = new Vector2();
+    public Vector2 movement;
     Rigidbody2D rigid2D;
 
     Animator animator;

@@ -12,8 +12,8 @@ public class FieldCard : MonoBehaviour
     {
         card.cardName = _card.cardName;
         card.cardImage = _card.cardImage;
-        
         cardimage.sprite = _card.cardImage;
+        card.efts = _card.efts;
     }
 
     public Card GetCard()

@@ -43,6 +43,12 @@ public class CardInventory : MonoBehaviour
         return false;
     }
 
+    public void RemoveCard(int _index)
+    {
+       cards.RemoveAt(_index); 
+       onChangeCard.Invoke();
+    }
+
     private void OnTriggerEnter2D(Collider2D collsion)
     {
         if (collsion.CompareTag("FieldCard"))

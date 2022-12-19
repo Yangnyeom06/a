@@ -72,7 +72,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 7024648501981196136, guid: 9d09f9d0868fc2346991667ccb2d0c97, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -99,6 +99,7 @@ MonoBehaviour:
   card:
     cardName: 
     cardImage: {fileID: 0}
+    efts: []
   cardimage: {fileID: 8270587440674399448}
 --- !u!61 &1536870210750421971
 BoxCollider2D:

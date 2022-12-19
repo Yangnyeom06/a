@@ -11,10 +11,14 @@ public class RPGGameManager : MonoBehaviour
     public HealthBar healthBarPrefab;
     public ExpBar expBarPrefab;
     public static bool GameIsPaused = false;
+    public static RPGGameManager instance;
+    public MoveController move;
 
     
     void Awake()
     {
+        instance = this;
+        
         if (sharedInstance != null && sharedInstance != this)
         {
             Destroy(gameObject);

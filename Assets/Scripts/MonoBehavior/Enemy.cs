@@ -25,7 +25,7 @@ public class Enemy : Character
         {
             StartCoroutine(FlickerCharacter());
             HP = HP - damage;
-            GameObject.Find("CardSlotSkill(Clone)").GetComponent<GaugeBar>().GaugeCharge(damage);
+            GameObject.Find("CardSkillSlotBack(Clone)").GetComponent<GaugeBar>().GaugeCharge(damage);
 
 
             if (HP <= float.Epsilon)

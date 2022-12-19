@@ -8,6 +8,8 @@ TagManager:
   - CanBePickedUp
   - VirtualCamera
   - FieldCard
+  - Ground
+  - Area
   layers:
   - Default
   - TransparentFX

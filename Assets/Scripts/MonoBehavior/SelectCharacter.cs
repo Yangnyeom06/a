@@ -7,10 +7,15 @@ public class SelectCharacter : MonoBehaviour
     public CharacterChoice character;
     SpriteRenderer sr;
     public SelectCharacter[] chars;
+    public GameObject[] textchars;
+
     void Start()
     {
         sr = GetComponent<SpriteRenderer>();
-        if (DataManager.instance.currentCharacter == character)OnSelect();
+        if (DataManager.instance.currentCharacter == character)
+        {
+            OnSelect();
+        }
         else OnDeSelect();
     }
 
@@ -20,7 +25,18 @@ public class SelectCharacter : MonoBehaviour
         OnSelect();
         for (int i = 0; i < chars.Length; i++)
         {
-        if (chars[i] != this) chars[i].OnDeSelect();
+            if (chars[i] == this)
+            {
+                textchars[i].SetActive(true);
+                print("툴팁");
+            }
+
+            if (chars[i] != this)
+            {
+                chars[i].OnDeSelect();
+                textchars[i].SetActive(false);
+                print("이동");
+            }
         }
     }
     void OnDeSelect()

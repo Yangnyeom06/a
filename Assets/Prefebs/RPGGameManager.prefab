@@ -43,7 +43,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9671e2b5c0582db47a73c713e61c9397, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameraManager: {fileID: 0}
   playerSpawnPoint: {fileID: 217145865231650203, guid: d5eb4a844d21fcb45ad6bcd1f2916978, type: 3}
   healthBarPrefab: {fileID: 3742684377045053592, guid: b74c6d10e47418b4c97d4ef3be3707dc, type: 3}
   expBarPrefab: {fileID: -1111708292444585573, guid: 27e2420a03b8b794c9181b645ba59260, type: 3}
+  move: {fileID: 8083614924206487208, guid: a5e0cd0bdf51c814a9d4db3e39fdac1b, type: 3}

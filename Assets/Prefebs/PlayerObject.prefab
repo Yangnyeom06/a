@@ -72,7 +72,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -151,7 +151,7 @@ Transform:
   m_GameObject: {fileID: 8083614924206487207}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.02, y: 0.05, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children:
   - {fileID: 8083614923874865372}
   m_Father: {fileID: 0}
@@ -286,9 +286,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40dc1fa35c438ff479be9f4e77cfeaa5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 10
-  dashSpeed: 25
+  movementSpeed: 5
+  dashSpeed: 10
   dashTime: 0.4
+  movement: {x: 0, y: 0}
 --- !u!114 &5734343586985202247
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -306,14 +307,14 @@ MonoBehaviour:
   maxExp: 10
   minExp: 0
   minGauge: 0
-  maxGauge: 5000
+  maxGauge: 180
   HP: {fileID: 11400000, guid: 7e65ed0abfd307d4b820b362d4e03305, type: 2}
   Exp: {fileID: 11400000, guid: 7e65ed0abfd307d4b820b362d4e03305, type: 2}
   Gauge: {fileID: 11400000, guid: 7e65ed0abfd307d4b820b362d4e03305, type: 2}
   inventoryPrefab: {fileID: 4346496163816016592, guid: 1728e27e91bb95a47a660d1bf1e60185, type: 3}
   healthBarPrefab: {fileID: 3742684377045053592, guid: b74c6d10e47418b4c97d4ef3be3707dc, type: 3}
   expBarPrefab: {fileID: -1111708292444585573, guid: 27e2420a03b8b794c9181b645ba59260, type: 3}
-  gaugeBarPrefab: {fileID: 2712760227495678030, guid: 4e7703bda5a5a8748b92e21a5ff84cc4, type: 3}
+  gaugeBarPrefab: {fileID: 1547396005384596522, guid: 7b2623a076cfdd446a7b1f4fcee101e8, type: 3}
   playerLevel: 1
 --- !u!114 &-3360827163189170356
 MonoBehaviour:
@@ -327,7 +328,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2accc996ef6f48a4f98d862e90336347, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shootDistance: 15
+  shootDistance: 10
   shootDelay: 2.5
   shoot: 1
   ammoPrefab: {fileID: 8870860047560332914, guid: 88a0dec723563e746a4d14985dd190c7, type: 3}
@@ -375,5 +376,6 @@ MonoBehaviour:
   character: 0
   chars:
   - {fileID: 8817564286134085559}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 6104874036889479049, guid: 373f721403183f845ba5119a5cf08efd, type: 3}
+  - {fileID: 5139422150632769293, guid: 49484a7b9073e6a48b1f0bf9b3702fb5, type: 3}
+  textchars: []
