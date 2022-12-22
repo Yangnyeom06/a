@@ -61,10 +61,4 @@ public class CardInventory : MonoBehaviour
             }
         }
     }
-
-    public void DrawCard()
-    {
-
-    }
-
 }

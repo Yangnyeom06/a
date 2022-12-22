@@ -5,15 +5,13 @@ using UnityEngine;
 public class CardInventoryUI : MonoBehaviour
 {
     CardInventory cardInven;
-    public Card card;
-
+    public CardSlot cardslot;
     public GameObject cardInventoryPanel;
 
     public CardSlot[] cardSlots;
     public Transform slotHolder;
-
     private void Start()
-    {        
+    {
         cardInven = CardInventory.instance;
         cardSlots = slotHolder.GetComponentsInChildren<CardSlot>();
         cardInven.onChangeCard += RedrawSlotUI;
@@ -21,28 +19,35 @@ public class CardInventoryUI : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKey(KeyCode.Z) & cardSlots[0] != null)
+        if (Input.GetKeyDown(KeyCode.Z))
         {
-            cardSlots[0].RemoveSlot();
-            if (cardInven.cards[0] != null)
+            try
             {
+                cardSlots[0].CardUse();
+                cardSlots[0].RemoveSlot();
                 cardInven.cards.RemoveAt(0);
+                RedrawSlotUI();
             }
-            
-        }
-        else if (Input.GetKey(KeyCode.X) & cardSlots[1] != null)
-        {
-            cardSlots[1].RemoveSlot();
-            if (cardInven.cards[1] != null)
+            catch
             {
-                cardInven.cards.RemoveAt(1);
+
             }
-        }
-        else
-        {
-            return;
         }
 
+        else if (Input.GetKeyDown(KeyCode.X))
+        {
+            try
+            {
+                cardSlots[1].CardUse();
+                cardSlots[1].RemoveSlot();
+                cardInven.cards.RemoveAt(1);
+                RedrawSlotUI();
+            }
+            catch
+            {
+
+            }
+        }
     }
 
     void RedrawSlotUI()

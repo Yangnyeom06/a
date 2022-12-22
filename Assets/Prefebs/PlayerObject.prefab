@@ -196,7 +196,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 100
   m_Sprite: {fileID: -2311659948842064771, guid: 7d936061eb3a69f42951c34b86690e46, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -302,8 +302,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8bbb388b99bfaf4380167ac426a75d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHP: 10
-  StartingHP: 5
+  maxHP: 100
+  StartingHP: 50
   maxExp: 10
   minExp: 0
   minGauge: 0
@@ -329,12 +329,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shootDistance: 10
-  shootDelay: 2.5
+  shootDelay: 0.1
   shoot: 1
   ammoPrefab: {fileID: 8870860047560332914, guid: 88a0dec723563e746a4d14985dd190c7, type: 3}
-  poolSize: 30
+  poolSize: 90
   weaponSpeed: 1.5
-  samdusa: 1
+  samdusa: 0
 --- !u!114 &-8187336324946679116
 MonoBehaviour:
   m_ObjectHideFlags: 0

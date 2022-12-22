@@ -12,4 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ec0b5833a2a340489bada7479746f9f, type: 3}
   m_Name: HitPoints
   m_EditorClassIdentifier: 
-  value: 0
+  hpValue: 100
+  expValue: 20
+  gaugeValue: 0

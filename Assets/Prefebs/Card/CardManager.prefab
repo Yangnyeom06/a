@@ -43,31 +43,48 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 158eea2f4a55f6f44bee25db88fefdfb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 5734343586985202247, guid: a5e0cd0bdf51c814a9d4db3e39fdac1b, type: 3}
+  _player: {fileID: 8083614924206487207, guid: a5e0cd0bdf51c814a9d4db3e39fdac1b, type: 3}
   cardlist:
   - cardName: Samdusa
     cardImage: {fileID: 7024648501981196136, guid: 9d09f9d0868fc2346991667ccb2d0c97, type: 3}
+    efts:
+    - {fileID: 11400000, guid: 9377f456f45b16d4296f9de57247cd58, type: 2}
   - cardName: Madness
     cardImage: {fileID: -1145144668836272637, guid: 9d09f9d0868fc2346991667ccb2d0c97, type: 3}
+    efts:
+    - {fileID: 11400000, guid: eee05c72f5bfe404daa3140e52b8c711, type: 2}
   - cardName: Twisted_Fate
     cardImage: {fileID: 8963368785945452489, guid: 9d09f9d0868fc2346991667ccb2d0c97, type: 3}
+    efts: []
   - cardName: Corrosion
     cardImage: {fileID: -7415955986125602904, guid: 9d09f9d0868fc2346991667ccb2d0c97, type: 3}
+    efts: []
   - cardName: Ghost
     cardImage: {fileID: -2922113337684369405, guid: 9d09f9d0868fc2346991667ccb2d0c97, type: 3}
+    efts: []
   - cardName: Culled
     cardImage: {fileID: 5610456433865955097, guid: 9d09f9d0868fc2346991667ccb2d0c97, type: 3}
+    efts: []
   - cardName: Balance
     cardImage: {fileID: 3929718611160277314, guid: 9d09f9d0868fc2346991667ccb2d0c97, type: 3}
+    efts: []
   - cardName: Judgement
     cardImage: {fileID: -657809462729225012, guid: 9d09f9d0868fc2346991667ccb2d0c97, type: 3}
+    efts: []
   - cardName: Wheel_Of_Fortune
     cardImage: {fileID: 2364552672744995599, guid: 9d09f9d0868fc2346991667ccb2d0c97, type: 3}
+    efts: []
   - cardName: Emperor
     cardImage: {fileID: -8096500043677648198, guid: 9d09f9d0868fc2346991667ccb2d0c97, type: 3}
+    efts: []
   - cardName: Star
     cardImage: {fileID: 2975849240591541955, guid: 9d09f9d0868fc2346991667ccb2d0c97, type: 3}
+    efts:
+    - {fileID: 11400000, guid: 40251d482c8fcfd4082a00e477f3863c, type: 2}
   - cardName: Moon
     cardImage: {fileID: 8948946568479395471, guid: 9d09f9d0868fc2346991667ccb2d0c97, type: 3}
+    efts: []
   fieldCardPrefab: {fileID: 3043038946880502060, guid: 72e4130fed8468f46949fea9b0356cde, type: 3}
   pos:
   - {x: 0, y: -10, z: 0}

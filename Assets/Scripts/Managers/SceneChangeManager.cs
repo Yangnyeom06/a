@@ -9,5 +9,6 @@ public class SceneChangeManager : MonoBehaviour
     public void SceneChangeTitle(){SceneManager.LoadScene("TitleScene");}
     public void SceneChangeGame(){SceneManager.LoadScene("GameScene");}
     public void SceneChangeSelect(){SceneManager.LoadScene("SelectScene");}
+    public void SceneChangeEnd(){SceneManager.LoadScene("EndScene");}
 
 }

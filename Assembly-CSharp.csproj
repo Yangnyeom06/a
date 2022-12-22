@@ -39,6 +39,7 @@
      <Compile Include="Assets\Scripts\Managers\RPGGameManager.cs" />
      <Compile Include="Assets\Scripts\MonoBehavior\Card\CardInventory.cs" />
      <Compile Include="Assets\Scripts\MonoBehavior\UI\CooldownUI.cs" />
+     <Compile Include="Assets\Scripts\MonoBehavior\Card\CardEffect\Samdosa.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ShaderPropAnimator.cs" />
      <Compile Include="Assets\Scripts\MonoBehavior\Card\CardInventoryUI.cs" />
      <Compile Include="Assets\Scripts\MonoBehavior\Card\CardList.cs" />
@@ -67,6 +68,7 @@
      <Compile Include="Assets\Scripts\MonoBehavior\UI\Inventory.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_FrameRateCounter.cs" />
      <Compile Include="Assets\Scripts\MonoBehavior\DotDamage.cs" />
+     <Compile Include="Assets\Scripts\MonoBehavior\Card\CardEffect\Star.cs" />
      <Compile Include="Assets\Scripts\MonoBehavior\Consumable.cs" />
      <Compile Include="Assets\Scripts\Managers\DataManager.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ChatController.cs" />
@@ -87,6 +89,7 @@
      <Compile Include="Assets\Scripts\MonoBehavior\Arc.cs" />
      <Compile Include="Assets\Scripts\MonoBehavior\Character.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\CameraController.cs" />
+     <Compile Include="Assets\Scripts\Scriptable Objects\CardEffect.cs" />
      <Compile Include="Assets\Scripts\RoundCameraPos.cs" />
      <Compile Include="Assets\Scripts\MonoBehavior\Card\FieldCard.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\DropdownSample.cs" />
@@ -106,7 +109,7 @@
      <Compile Include="Assets\Scripts\MonoBehavior\UI\HealthBar.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventCheck.cs" />
      <Compile Include="Assets\Scripts\MonoBehavior\Card\CardSlot.cs" />
-     <Compile Include="Assets\Scripts\Scriptable Objects\CardEffect.cs" />
+     <Compile Include="Assets\Scripts\MonoBehavior\Card\CardEffect\Madness.cs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />

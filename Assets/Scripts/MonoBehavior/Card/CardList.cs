@@ -5,9 +5,9 @@ using UnityEngine;
 
 public class CardList : MonoBehaviour
 {
-    GaugeBar Gaugebar;
+    public Player player;
     public static CardList cardList;
-
+    public GameObject _player;
     private void Awake()
     {
         cardList = this;
@@ -25,5 +25,15 @@ public class CardList : MonoBehaviour
             GameObject card = Instantiate(fieldCardPrefab, pos[i], Quaternion.identity);
             card.GetComponent<FieldCard>().SetCard(cardlist[Random.Range(0, 12)]);
         }
+    }
+    void Update()
+    {
+        //print(_player.transform.position);
+    }
+    public void DrawCard()
+    {
+        print("DrawCard");
+        GameObject card = Instantiate(fieldCardPrefab, _player.transform.position, Quaternion.identity);
+        card.GetComponent<FieldCard>().SetCard(cardlist[Random.Range(0, 12)]);
     }
 }

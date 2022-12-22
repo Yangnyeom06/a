@@ -23,7 +23,7 @@ public class HealthBar : MonoBehaviour
         if(Character != null)
         {
             HPMeterImage.fillAmount = HP.hpValue / maxHP;
-            HPText.text = "HP:" + (HPMeterImage.fillAmount * 100);
+            HPText.text = "HP:" + (HPMeterImage.fillAmount * maxHP);
         }
     }
 }

@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class Ammo : MonoBehaviour
 {
-    GaugeBar GaugeBar;
-    Player player;
     public int damageInflicted;
 
     private void OnTriggerEnter2D(Collider2D collision)

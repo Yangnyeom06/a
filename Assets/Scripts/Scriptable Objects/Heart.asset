@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectName: heart
   sprite: {fileID: -205270267638800340, guid: b6d5b050648b86f4892dafbeab62a08a, type: 3}
-  quantity: 1
+  quantity: 10
   stackable: 1
   itemType: 1

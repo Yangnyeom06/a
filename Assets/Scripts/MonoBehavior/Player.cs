@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 public class Player : Character
 {
     public HitPoints HP;
@@ -17,6 +18,7 @@ public class Player : Character
     GaugeBar gaugeBar;
     SkillList skill;
     Weapon weapon;
+    SceneChangeManager sceceChg;
 
     public static bool GameIsPaused = false;
 
@@ -153,14 +155,17 @@ public class Player : Character
     }
 
 
+    public void SceneChangeEnd(){SceneManager.LoadScene("EndScene");}
 
     public override void KillCharacter()
     {
         base.KillCharacter();
-
         Destroy(healthBar.gameObject);
         Destroy(expBar.gameObject);
         Destroy(gaugeBar.gameObject);
+
+        Invoke("SceneChangeEnd", 3.0f);
+        
     }
 
     // -------->

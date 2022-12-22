@@ -193,11 +193,12 @@ public class Weapon : MonoBehaviour
             float travelDuration = 1.0f / weaponSpeed;
             StartCoroutine(arcScript.TravelArc(Position, travelDuration));
         }
-        /*if (samdusa == true)
+        
+        if (samdusa == true)
         {
             FireAmmoLeft();
             FireAmmoRight();
-        }    */ 
+        }
     }
     public void FireAmmoLeft()
     {

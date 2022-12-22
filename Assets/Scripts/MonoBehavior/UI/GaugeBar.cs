@@ -33,7 +33,7 @@ public class GaugeBar : MonoBehaviour
         if (Gauge.gaugeValue >= maxGauge)
         {
             Gauge.gaugeValue = 0;
-            GameObject.Find("PlayerObject(Clone)").GetComponent<CardInventory>().DrawCard();
+            GameObject.Find("CardManager").GetComponent<CardList>().DrawCard();
 
             print("성공");
         }

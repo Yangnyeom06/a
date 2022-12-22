@@ -23,4 +23,9 @@ public class CardSlot : MonoBehaviour
         card = null;
         cardIcon.gameObject.SetActive(false);
     }
+
+    public void CardUse()
+    {
+        bool isUse = card.Use();
+    }
 }
